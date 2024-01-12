@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Professional Blog :: Contact</title>
+    <link rel="stylesheet" type="text/css" href="CSS/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="JS/script.js"></script>
+  </head>
+
+  <body>
+    <header>
+      <a href="index.html" class="brand">Khang Tran</a>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="resume.html">Resume</a></li>
+          <li><a href="project.html">Project</a></li>
+          <li><a href="hobby.html">Hobby</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <nav id="additionalMenu">
+        <ul>
+          <li><a href="#">In-progress</a></li>
+          <li><a href="#">In-progress</a></li>
+          <li><a href="#">In-progress</a></li>
+        </ul>
+      </nav>     
+      <div class="hamburger-menu" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>      
+    </header> 
+
+    <div class="sidebar">
+      <div class="personal-picture"></div>
+      <h3 class="author_name">Khang Tran</h3>
+      <p class="biography">Cybersecurity Student, Western Washington University</p>
+      <div class="urls-wrapper">
+        <ul>
+          <li><a href="mailto:trank28@wwu.edu"><i class="fa fa-envelope" aria-hidden="true"></i> Email</a></li>
+          <li><a href="https://github.com/firzen1912"><i class="fa fa-github" aria-hidden="true"></i> Github</a></li>
+          <li><a href="https://www.linkedin.com/in/khang-tran-b063a5226/"><i class="fa fa-linkedin"></i> Linkedin</a></li>
+        </ul>
+      </div>      
+    </div>
+
+    <main>
+      <h1>Contact</h1>
+      <!-- first row -->
+      <section>
+        <p id="requiredInfo">Required information is marked with an asterisk.</p>
+        <form id="myForm" onsubmit="event.preventDefault(); displayThankYou();">
+              <div class="form-group">
+                <label for="first_name">* First Name:</label>
+                <input type="first_name" name="first_name" id="first_name" required>
+              </div>
+            
+              <div class="form-group">
+                <label for="last_name">* Last Name:</label>
+                <input type="last_name" name="last_name" id="last_name" required>
+              </div>
+            
+              <div class="form-group">
+                <label for="myEmail">* E-mail:</label>
+                <input type="email" name="email" id="email" required>
+              </div>
+            
+              <div class="form-group">
+                <label for="topic">* Topic:</label>
+                <input type="topic" name="topic" id="topic"required>
+              </div>
+              
+              <div class="form-group">
+                <label for="comments">Comments:</label>
+                <textarea name="comments" id="comments" rows="2" cols="20"></textarea>
+              </div>               
+            
+              <input type="submit" value="Submit" id="mySubmit">
+          </form>
+
+          <div id="thankYouMessage" style="display: none;">
+            <h3>Thank you for your submission!</h3>
+            <button onclick="returnToContactForm();">Return to contact form</button>
+          </div> 
+      </section>
+    </main>
+    
+    <footer>
+      <p>Copyright &copy; 2023 Khang Tran Professional Blog<br></p>
+      <small>
+        <b>Last modified:</b>
+        <script>
+            var date = document.lastModified;
+            document.write(date);
+        </script>
+      </small>
+    </footer>
+  </body>
+</html>
