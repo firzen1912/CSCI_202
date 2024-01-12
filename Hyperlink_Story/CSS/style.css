@@ -133,7 +133,7 @@ ul li a:hover {
 
 /* Picture Style */
 .personal-picture {
-  background-image: url(../images/profile_picture.jpg);
+  background-image: url(../Images/profile_picture.jpg);
   width: 148px;
   height: 250px;
   background-repeat: no-repeat;
