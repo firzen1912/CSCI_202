@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Professional Blog :: Project</title>
+    <link rel="stylesheet" type="text/css" href="CSS/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="JS/script.js"></script>
+  </head>
+
+  <body>
+    <header>
+      <a href="index.html" class="brand">Khang Tran</a>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="resume.html">Resume</a></li>
+          <li><a href="project.html">Project</a></li>
+          <li><a href="hobby.html">Hobby</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <nav id="additionalMenu">
+        <ul>
+          <li><a href="#">In-progress</a></li>
+          <li><a href="#">In-progress</a></li>
+          <li><a href="#">In-progress</a></li>
+        </ul>
+      </nav> 
+      <div class="hamburger-menu" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>          
+    </header> 
+
+    <div class="sidebar">
+      <div class="personal-picture"></div>
+      <h3 class="author_name">Khang Tran</h3>
+      <p class="biography">Cybersecurity Student, Western Washington University</p>
+      <div class="urls-wrapper">
+        <ul>
+          <li><a href="mailto:trank28@wwu.edu"><i class="fa fa-envelope" aria-hidden="true"></i> Email</a></li>
+          <li><a href="https://github.com/firzen1912"><i class="fa fa-github" aria-hidden="true"></i> Github</a></li>
+          <li><a href="https://www.linkedin.com/in/khang-tran-b063a5226/"><i class="fa fa-linkedin"></i> Linkedin</a></li>
+        </ul>
+      </div>      
+    </div>
+
+    <main>
+      <h1>Project</h1>
+      <!-- first row -->
+      <section>
+        <h2>Helix Keyboard Project</h2>
+        <h3>Part Sorting List</h3>
+        <table>
+          <tr>
+            <th>Components Name</th>
+            <th>Notes</th>
+            <th>Costs</th>
+            <th>Shop Link</th>
+          </tr>
+          <tr>
+            <td>PCB Kit</td>
+            <td class = "text">The kit contain left/right pcb, OLED display modules, SMD diodes, TRRS jacks, TRRS cable, RGB LED SK6812mini-3535</td>
+            <td>$78.00 USD</td>
+            <td><a href="https://shop.yushakobo.jp/products/2143">link</a></td>
+          </tr>
+          <tr>
+            <td>Pro Micro</td>
+            <td class = "text">2x Elite-C v4 controller</td>
+            <td>$35.98 USD</td>
+            <td><a href="https://www.littlekeyboards.com/products/elite-c-v3?_pos=5&_sid=7944928e0&_ss=r">link</a></td>
+          </tr>
+          <tr>
+            <td>Key Switch</td>
+            <td class = "text">64x Brown Kailh Choc key switches</td>
+            <td>$41.93 USD</td>
+            <td><a href="https://www.littlekeyboards.com/collections/keyboard-switches/products/kailh-choc-low-profile-switches?variant=31008074891331">link</a></td>
+          </tr>
+          <tr>
+            <td>Key Cap</td>
+            <td class = "text">Shine Through Keycap for LED</td>
+            <td>$55.00 USD</td>
+            <td><a href="https://www.littlekeyboards.com/collections/new-products/products/mbk-glow-keycaps?variant=40390395658307">link</a></td>
+          </tr>
+          <tr>
+            <td>Keyboard Case</td>
+            <td class = "text">Clear case for protecting PCB</td>
+            <td>$24.99 USD</td>
+            <td><a href="https://www.littlekeyboards.com/products/helix-technician-five-row-keyboard-case?variant=12417577484335">link</a></td>
+          </tr>
+          
+      </table> 
+      </section>
+
+      <!-- second row -->
+      <section>
+        <h3>Assembly Step</h3>
+          
+          <p>I follow the step of this <a href="https://github.com/MakotoKurauchi/helix/blob/master/Doc/buildguide_en.md">soldering guide</a> authored by MakotoKurauchi and translated by N6UDP to fully solder the PCB board above with help from a good friend</p>
+          <div class="pcb-picture"></div>
+
+          <p>After I finished writing my firmware code in C programming languages, I follow the step of this <a href="https://github.com/MakotoKurauchi/helix/blob/master/Doc/firmware_en.md">flashing firmware guide</a> also authored by MakotoKurauchi and translated by N6UDP to flash my custom firmware into the newly solder board</p>
+          <div class="firmware-picture"></div>
+
+          <p>Here is the final result and LED test</p>
+          <!-- Video Control -->
+          <div class="video-container">
+            <video controls>
+              <source src="Images/Helix_Project/led_test.mp4" type="video/mp4">
+            </video>
+          </div>
+      </section>
+
+      <!-- third row -->
+      <section>
+        <h2>Project Link</h2>
+        <ul>
+          <li><a href="https://github.com/MakotoKurauchi/helix">Creator Guide</a></li>
+        </ul>
+      </section>
+    </main>
+  </body>
+
+  <footer>
+    <p>Copyright &copy; 2023 Khang Tran Professional Blog<br></p>
+    <small>
+      <b>Last modified:</b>
+      <script>
+          var date = document.lastModified;
+          document.write(date);
+      </script>
+    </small>
+  </footer>
+</html>
