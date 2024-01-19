@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Professional Blog :: Project</title>
+    <link rel="stylesheet" type="text/css" href="../CSS/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="JS/script.js"></script>
+  </head>
+
+  <body>
+    <header>
+      <a href="index.html" class="brand">Khang Tran</a>
+      <nav>
+        <ul>
+          <li><a href="../Home/index.html">Home</a></li>
+          <li><a href="../Resume/resume.html">Resume</a></li>
+          <li><a href="../Project/project.html">Project</a></li>
+          <li><a href="../Hobby/hobby.html">Hobby</a></li>
+        </ul>
+      </nav>
+    </header>   
+
+    <div class="sidebar">
+      <div class="personal-picture"></div>
+      <h3 class="author_name">Khang Tran</h3>
+      <p class="biography">Cybersecurity Student, Western Washington University</p>
+      <div class="urls-wrapper">
+        <ul>
+          <li><a href="mailto:trank28@wwu.edu"><i class="fa fa-envelope" aria-hidden="true"></i> Email</a></li>
+          <li><a href="https://github.com/firzen1912"><i class="fa fa-github" aria-hidden="true"></i> Github</a></li>
+          <li><a href="https://www.linkedin.com/in/khang-tran-b063a5226/"><i class="fa fa-linkedin"></i> Linkedin</a></li>
+        </ul>
+      </div>      
+    </div>
+
+    <main>
+      <h1>Helix V2 Keyboard Project</h1>
+      <!-- first row -->
+      <section>
+        <h2>Part Sorting List</h2>
+        <table>
+          <tr>
+            <th>Components Name</th>
+            <th>Notes</th>
+            <th>Costs</th>
+            <th>Shop Link</th>
+          </tr>
+          <tr>
+            <td>PCB Kit</td>
+            <td class = "text">The kit contain left/right pcb, OLED display modules, SMD diodes, TRRS jacks, TRRS cable, RGB LED SK6812mini-3535</td>
+            <td>$120.00 USD</td>
+            <td><a href="https://shop.yushakobo.jp/products/2143">link</a></td>
+          </tr>
+          <tr>
+            <td>Pro Micro</td>
+            <td class = "text">2x Nice Nano V2 Controller</td>
+            <td>$50.00 USD</td>
+            <td><a href="https://typeractive.xyz/products/nice-nano">link</a></td>
+          </tr>
+          <tr>
+            <td>Key Switch</td>
+            <td class = "text">64x White Kailh Choc key switches</td>
+            <td>$41.93 USD</td>
+            <td><a href="https://www.littlekeyboards.com/collections/keyboard-switches/products/kailh-choc-low-profile-switches?variant=31008074924099">link</a></td>
+          </tr>
+          <tr>
+            <td>Key Cap</td>
+            <td class = "text">Legended Shine Through Keycap for LED</td>
+            <td>$55.00 USD</td>
+            <td><a href="https://www.littlekeyboards.com/collections/new-products/products/mbk-glow-keycaps?variant=40390395658307">link</a></td>
+          </tr>
+          <tr>
+            <td>Keyboard Case</td>
+            <td class = "text">3D Printed Case for protecting PCB</td>
+            <td>Depend on Service</td>
+            <td><a href="https://www.thingiverse.com/thing:6441519">link</a></td>
+          </tr>
+          
+      </table> 
+      </section>
+
+      <!-- second row -->
+      <section>
+        <h2>Assembly Step</h2>
+          
+          <p>The PCB kit already have all of the small component machine solder in to the main PCB. Then, I follow the step of this <a href="https://github.com/MakotoKurauchi/helix/blob/master/Doc/buildguide_en.md">soldering guide</a> authored by MakotoKurauchi and translated by N6UDP to fully solder the nice nano to the main PCB Note: Do not solder the RAW pin to main PCB. </p>
+          <div class="v2-pcb-picture"></div>
+          
+          <p>For the construction of my firmware, I followed the detailed instructions provided in the <a href="https://kriscables.com/zmk-firmware-nicenano/">ZMK guide documentation</a>. This comprehensive guide from Kriscables served as a valuable resource, offering step-by-step insights into creating a firmware tailored to my requirements. By adhering to the guidelines outlined in the documentation, I successfully crafted a customized firmware that aligns seamlessly with the functionalities I envisioned for my keyboard.</p>
+          <div class="v2-firmware-flash-picture"></div>
+
+          
+          <p>To customize my keymap, I utilized the <a href="https://nickcoutsos.github.io/keymap-editor/">ZMK GUI keymap configurator</a> for an intuitive and streamlined experience. This web-based tool allowed me to easily tailor my keyboard layout, define key functions, and configure layers, resulting in a personalized and efficient setup. Most of the function is enable on the <a href="https://github.com/firzen1912/zmk-config">my firmware repo</a> version which can be clone and modified accordingly</p>
+          <div class="v2-ZMK-configurator-picture"></div>
+
+          <p>Here is the final result and LED test</p>
+          <!-- Video Control -->
+          <div class="video-container">
+            <video controls>
+              <source src="../Images/Helix_V2/led_test.mp4" type="video/mp4">
+            </video>
+          </div>
+      </section>
+
+      <!-- third row -->
+      <section>
+        <h2>Project Link</h2>
+        <ul>
+          <li><a href="https://github.com/MakotoKurauchi/helix">Creator Guide</a></li>
+        </ul>
+      </section>
+    </main>
+  </body>
+
+  <footer>
+    <p>Copyright &copy; 2023 Khang Tran Professional Blog<br></p>
+    <small>
+      <b>Last modified:</b>
+      <script>
+          var date = document.lastModified;
+          document.write(date);
+      </script>
+    </small>
+  </footer>
+</html>

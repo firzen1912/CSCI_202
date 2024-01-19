@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Professional Blog :: Project</title>
+    <link rel="stylesheet" type="text/css" href="../CSS/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="JS/script.js"></script>
+  </head>
+
+  <body>
+    <header>
+      <a href="index.html" class="brand">Khang Tran</a>
+      <nav>
+        <ul>
+          <li><a href="../Home/index.html">Home</a></li>
+          <li><a href="../Resume/resume.html">Resume</a></li>
+          <li><a href="../Project/project.html">Project</a></li>
+          <li><a href="../Hobby/hobby.html">Hobby</a></li>
+        </ul>
+      </nav>
+    </header>   
+
+    <div class="sidebar">
+      <div class="personal-picture"></div>
+      <h3 class="author_name">Khang Tran</h3>
+      <p class="biography">Cybersecurity Student, Western Washington University</p>
+      <div class="urls-wrapper">
+        <ul>
+          <li><a href="mailto:trank28@wwu.edu"><i class="fa fa-envelope" aria-hidden="true"></i> Email</a></li>
+          <li><a href="https://github.com/firzen1912"><i class="fa fa-github" aria-hidden="true"></i> Github</a></li>
+          <li><a href="https://www.linkedin.com/in/khang-tran-b063a5226/"><i class="fa fa-linkedin"></i> Linkedin</a></li>
+        </ul>
+      </div>      
+    </div>
+
+    <main>
+      <h1>Ultimate Router Project</h1>
+      <!-- first row -->
+      <section>
+        <h2>Hardware Components</h2>
+        <table>
+          <tr>
+            <th>Components Name</th>
+            <th>Notes</th>
+            <th>Costs</th>
+            <th>Shop Link</th>
+          </tr>
+          <tr>
+            <td>Intel NUC NUC6i7KYK</td>
+            <td class = "text">This is a used Intel NUC NUC6i7KYK I bought on ebay</td>
+            <td>Vary based on seller</td>
+            <td><a href="https://www.ebay.com/sch/i.html?_from=R40&_nkw=Intel+NUC+NUC6i7KYK&_sacat=0">link</a></td>
+          </tr>
+          <tr>
+            <td>USB 3.0 Male to Ethernet Female Adapter</td>
+            <td class = "text">This will make the NUC have 2 ethernet port for routing purpose</td>
+            <td>$12.98 USD</td>
+            <td><a href="https://www.amazon.com/dp/B09GRL3VCN?psc=1&ref=ppx_pop_dt_b_asin_title">link</a></td>
+          </tr>
+          <tr>
+            <td>USB Flash Drive</td>
+            <td class = "text">Use to install proxmox to the NUC</td>
+            <td>$7.69 USD</td>
+            <td><a href="https://www.amazon.com/SanDisk-Ultra-Flair-Flash-Drive/dp/B015CH1JIW/ref=sr_1_10?crid=287DDM95NENJQ&dib=eyJ2IjoiMSJ9.EYwLW_sf2hl08IEPbZebqhLH4IhRHcsAQy457S1tk1rzVAGLSEpH-jxaq6q8M2H1YjmTEQ0jJZX2RiGFZHMzg8_2s9LJISNo2X-jPlKW4baG1pkD_4xO-eFm6AInlX9P1zecHwD8jNBFz-WWokCRwNCq7E3A65Vu1pwheJ3LeSpqytbhwqFhFXyEoE_kLBwZoTAjaCSdEKcp4PfDdwVFCebAD2D_3RNsCLvpA8Iti7K19KMPd_OClJGY-HnrIR-ppBho9YO3Bk-OFkpEuzkHHn79QHbwndZ1Xj2P6rcqmcw.w8ga8263fGMFly5GvA0lpUcUTGg-U6V904uo5hWeOpI&dib_tag=se&keywords=usb%2Bdrive&qid=1705638625&s=electronics&sprefix=usb%2Bdrive%2Celectronics%2C204&sr=1-10&th=1">link</a></td>
+          </tr>
+      </table> 
+      </section>
+
+      <h2>Software Components</h2>
+        <p><a href="https://www.proxmox.com/proxmox-ve">Proxmox</a> virtual environment, seamlessly integrating essential components to meet all your security needs in one robust router machine.</p>
+        
+        <p><a href="https://opnsense.org/">OPNSense</a> for advanced routing capabilities.</p>
+        
+        <p><a href="https://pi-hole.net/">Pihole</a> is implemented for efficient ad-blocking.</p>
+
+        <p><a href="https://nordvpn.com/">NordVPN</a> is utilized for secure and private connections.</p>
+
+        <p>This cohesive setup ensures that your network is fortified against potential threats, providing a comprehensive and efficient solution for all your security and routing requirements.</p>
+      
+        <h2>Installation Steps:</h2>
+        
+        <h3>Proxmox Installation</h3>
+        <p>Installing <a href="https://www.proxmox.com/proxmox-ve">Proxmox</a> into Intel NUC:</p>
+        <p>1. Ensure your Intel NUC is powered on and connected to the internet.</p>
+        <p>2. Download the Proxmox ISO from the official website: <a href="https://www.proxmox.com/proxmox-ve">https://www.proxmox.com/proxmox-ve</a>.</p>
+        <p>3. Create a bootable USB drive with the Proxmox ISO using a tool like Rufus or Etcher.</p>
+        <p>4. Insert the USB drive into the Intel NUC and boot from it.</p>
+        <p>5. Follow the on-screen instructions to install Proxmox on the Intel NUC.</p>
+        <div class="video-container">
+          <iframe width="100%" height="100%" src="https://www.youtube.com/embed/6NfZ1R6jrXQ" frameborder="0" allowfullscreen></iframe>
+        </div>
+
+        <h3>OPNSense Installation</h3>
+        <p>To install <a href="https://opnsense.org/">OPNSense</a> on <a href="https://www.proxmox.com/proxmox-ve">Proxmox</a> virtual environment:</p>
+        <p>1. Ensure Proxmox is installed and running on your Intel NUC.</p>
+        <p>2. Download the OPNSense ISO from the official website: <a href="https://opnsense.org/">https://opnsense.org/</a>.</p>
+        <p>3. Create a new virtual machine in Proxmox and mount the OPNSense ISO.</p>
+        <p>4. Install OPNSense following the on-screen instructions.</p>
+        <div class="video-container">
+          <iframe width="100%" height="100%" src="https://www.youtube.com/embed/CONOSUWfQvA" frameborder="0" allowfullscreen></iframe>
+        </div>
+
+        <h3>Pihole Installation</h3>
+        <p>To install <a href="https://pi-hole.net/">Pihole</a> on <a href="https://www.proxmox.com/proxmox-ve">Proxmox</a> virtual environment:</p>
+        <p>1. Ensure Proxmox is installed and running on your Intel NUC.</p>
+        <p>2. Create a new virtual machine in Proxmox and mount the Pihole ISO.</p>
+        <p>3. Install Pihole following the on-screen instructions.</p>
+        <div class="video-container">
+          <iframe width="100%" height="100%" src="https://www.youtube.com/embed/F2b1SECl-Ek" frameborder="0" allowfullscreen></iframe>
+        </div>
+        
+    </main>
+  </body>
+
+  <footer>
+    <p>Copyright &copy; 2023 Khang Tran Professional Blog<br></p>
+    <small>
+      <b>Last modified:</b>
+      <script>
+          var date = document.lastModified;
+          document.write(date);
+      </script>
+    </small>
+  </footer>
+</html>
