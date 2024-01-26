@@ -7,11 +7,11 @@ function updateTimeAndColor(offset, timeId, dateId, timeZone) {
     const timeString = currentDate.toLocaleTimeString('en-US', options);
 
     // Use Intl.DateTimeFormat to get the date based on the selected time zone
-    const dateOptions = { timeZone, year: 'numeric', month: 'long', day: 'numeric' };
+    const dateOptions = { timeZone, year: 'numeric', month: 'numeric', day: 'numeric' };
     const dateString = new Intl.DateTimeFormat('en-US', dateOptions).format(currentDate);
 
-    document.getElementById(timeId).innerText = `Current Time: ${timeString}`;
-    document.getElementById(dateId).innerText = `Current Date: ${dateString}`;
+    document.getElementById(timeId).innerText = `Time: ${timeString}`;
+    document.getElementById(dateId).innerText = `Date: ${dateString}`;
 
     const blockElement = document.getElementById(timeId).parentNode;
 
