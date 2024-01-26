@@ -1,7 +1,11 @@
 function updateTimeAndColor(sliderValue, offset, timeId, dateId, timeZone) {
     const currentDate = new Date();
     const utcHour = sliderValue % 24; // Calculate the actual UTC hour based on the slider value
-    const currentHour = (utcHour + offset + 24) % 24; // Ensure the result is non-negative
+
+    // Adjust the offset based on whether it's UTC+ or UTC-
+    const adjustedOffset = offset >= 0 ? -offset : Math.abs(offset);
+
+    const currentHour = (utcHour + adjustedOffset + 24) % 24; // Ensure the result is non-negative
 
     const options = { timeZone, hour12: false };
     const timeString = currentDate.toLocaleTimeString('en-US', options);
@@ -16,19 +20,20 @@ function updateTimeAndColor(sliderValue, offset, timeId, dateId, timeZone) {
     const blockElement = document.getElementById(timeId).parentNode;
 
     if (currentHour >= 6 && currentHour < 12) {
-        // Morning
-        blockElement.style.backgroundColor = '#3498db'; // Blue
+        // Morning (cyan)
+        blockElement.style.backgroundColor = '#0095FF'; // Cyan
     } else if (currentHour >= 12 && currentHour < 18) {
-        // Afternoon
-        blockElement.style.backgroundColor = '#e67e22'; // Orange
+        // Afternoon (blue)
+        blockElement.style.backgroundColor = '#0000FF'; // Blue
     } else if (currentHour >= 18 && currentHour < 24) {
-        // Evening
-        blockElement.style.backgroundColor = '#2c3e50'; // Dark Gray
+        // Evening (dark blue)
+        blockElement.style.backgroundColor = '#000090'; // Dark Blue
     } else {
-        // Midnight to early morning
-        blockElement.style.backgroundColor = '#34495e'; // Midnight Blue
+        // Midnight to early morning (Black)
+        blockElement.style.backgroundColor = '#000000'; // Black
     }
 }
+
 
 function updateWithSlider() {
     const sliderValue = parseInt(document.getElementById('timeSlider').value, 10);

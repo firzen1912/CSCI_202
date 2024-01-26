@@ -63,8 +63,8 @@ header nav ul li a:hover:before {
   background-color: #fff;
 }
 
-a{
-  color: #4169E1;
+a {
+  color: #4169e1;
 }
 
 body {
@@ -92,15 +92,35 @@ body {
   overflow: hidden;
 }
 
+#adjustTime {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#sliderTitle{
+  margin-bottom: 0px;
+}
+
 #timeSlider {
   width: 60%;
-  margin: 20px;
+  margin: 10px;
+}
+
+#resetContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 #resetButton {
   margin-top: 10px;
   padding: 10px;
   cursor: pointer;
+}
+
+#resetContainer p {
+  text-align: center;
 }
 
 #description {
@@ -115,6 +135,7 @@ footer {
   padding: 5px;
   text-align: center;
 }
-footer p{
+
+footer p {
   margin: 5px;
 }

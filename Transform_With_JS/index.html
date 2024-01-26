@@ -9,7 +9,8 @@
 <body>
 <header>
     <a href="index.html" class="brand">Khang Tran CSCI 202 Interactive Javascript Timezone</a>
-</header>   
+</header>
+
 <!-- Container to hold all UTC time zones -->
 <div id="utcContainer">
     <!-- Generate the UTC time zones dynamically -->
@@ -17,7 +18,7 @@
         for (let i = -12; i <= 12; i++) {
             document.write(`
                 <div class="timezone" id="utc${i}">
-                    <h2>UTC${i === 0 ? '-' : (i > 0 ? '+' : '')}${i}</h2>
+                    <h2>UTC${i === 0 ? '+' : (i > 0 ? '-' : '')}${i}</h2>
                     <p id="time${i}"></p>
                     <p id="date${i}"></p>
                 </div>
@@ -26,11 +27,14 @@
     </script>
 </div>
 
-<label for="timeSlider">Adjust Time Difference:</label>
-<!-- Set the default value of the slider to the current UTC time -->
-<input type="range" id="timeSlider" min="0" max="24" step="1" value="0">
+<div id="adjustTime">
+    <p id="sliderTitle">Adjust Time</p>
+    <input type="range" id="timeSlider" min="0" max="24" step="1" value="0">
+</div>
 
-<button id="resetButton">Reset to Default</button>
+<div id="resetContainer">
+    <button id="resetButton">Reset to Default</button>
+</div>
 
 <script src="script.js"></script>
 
@@ -48,8 +52,4 @@
       </script>
     </small>
 </footer>
-<script>
-    // Set the default value of the slider to the current UTC hour
-    document.getElementById('timeSlider').value = new Date().getUTCHours();
-</script>
 </html>
