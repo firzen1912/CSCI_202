@@ -31,30 +31,30 @@ function updateTimeAndColor(offset, timeId, dateId, timeZone) {
 }
 
 
-    function updateWithSlider() {
-        const sliderValue = parseInt(document.getElementById('timeSlider').value, 10);
+function updateWithSlider() {
+    const sliderValue = parseInt(document.getElementById('timeSlider').value, 10);
 
-        // Update all UTC time zones dynamically
-        for (let i = -12; i <= 12; i++) {
-            updateTimeAndColor(sliderValue + i, `time${i}`, `date${i}`, `Etc/GMT${i >= 0 ? '+' : ''}${i}`);
-        }
+    // Update all UTC time zones dynamically
+    for (let i = -12; i <= 12; i++) {
+        updateTimeAndColor(sliderValue + i, `time${i}`, `date${i}`, `Etc/GMT${i >= 0 ? '+' : ''}${i}`);
     }
+}
 
-    function resetToDefault() {
-        document.getElementById('timeSlider').value = 0;
-        updateWithSlider();
-    }
-
-    // Initial update based on the slider value
+function resetToDefault() {
+    document.getElementById('timeSlider').value = new Date().getUTCHours();
     updateWithSlider();
+}
 
-    // Update time and color every second
-    setInterval(function () {
-        updateWithSlider();
-    }, 1000);
+// Initial update based on the slider value
+updateWithSlider();
 
-    // Update time and color when the slider value changes
-    document.getElementById('timeSlider').addEventListener('input', updateWithSlider);
+// Update time and color every second
+setInterval(function () {
+    updateWithSlider();
+}, 1000);
 
-    // Reset to default button
-    document.getElementById('resetButton').addEventListener('click', resetToDefault);
+// Update time and color when the slider value changes
+document.getElementById('timeSlider').addEventListener('input', updateWithSlider);
+
+// Reset to default button
+document.getElementById('resetButton').addEventListener('click', resetToDefault);

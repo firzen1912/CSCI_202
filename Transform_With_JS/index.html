@@ -7,7 +7,9 @@
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-
+<header>
+    <a href="index.html" class="brand">Khang Tran CSCI 202 Interactive Javascript Timezone</a>
+</header>   
 <!-- Container to hold all UTC time zones -->
 <div id="utcContainer">
     <!-- Generate the UTC time zones dynamically -->
@@ -25,11 +27,29 @@
 </div>
 
 <label for="timeSlider">Adjust Time Difference:</label>
-<input type="range" id="timeSlider" min="-12" max="12" step="1" value="0">
+<!-- Set the default value of the slider to the current UTC time -->
+<input type="range" id="timeSlider" min="0" max="24" step="1" value="0">
 
 <button id="resetButton">Reset to Default</button>
 
 <script src="script.js"></script>
 
+<!-- Text content under the reset button -->
+<!-- Extended description content under the reset button -->
+<p id="description">This website provides a dynamic and interactive simulation of the time differences between various time zones across the globe. By adjusting the time slider, you can observe how the current time and date change in each time zone. The goal is to offer a visual representation of how time zones relate to one another, making it an educational and informative tool for understanding the global time disparities. Explore the diverse time zones from UTC-12 to UTC+12, and witness how the colors change based on the time of day. The blue hues represent the morning, orange signifies the afternoon, dark gray marks the evening, and midnight blue indicates the late-night to early morning hours. Feel free to interact with the time difference slider, reset the simulation to default, and immerse yourself in this engaging experience to enhance your understanding of time zones worldwide.</p>
 </body>
+<footer>
+    <p>Copyright &copy; 2024 Khang Tran Interactive Map<br></p>
+    <small>
+      <b>Last modified:</b>
+      <script>
+          var date = document.lastModified;
+          document.write(date);
+      </script>
+    </small>
+</footer>
+<script>
+    // Set the default value of the slider to the current UTC hour
+    document.getElementById('timeSlider').value = new Date().getUTCHours();
+</script>
 </html>
