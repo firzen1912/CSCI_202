@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Difference Simulator</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+<!-- Container to hold all UTC time zones -->
+<div id="utcContainer">
+    <!-- Generate the UTC time zones dynamically -->
+    <script>
+        for (let i = -12; i <= 12; i++) {
+            document.write(`
+                <div class="timezone" id="utc${i}">
+                    <h2>UTC${i === 0 ? '+' : (i > 0 ? '-' : '')}${i}</h2>
+                    <p id="time${i}"></p>
+                    <p id="date${i}"></p>
+                </div>
+            `);
+        }
+    </script>
+</div>
+
+<label for="timeSlider">Adjust Time Difference:</label>
+<input type="range" id="timeSlider" min="-12" max="12" step="1" value="0">
+
+<button id="resetButton">Reset to Default</button>
+
+<script src="script.js"></script>
+
+</body>
+</html>
