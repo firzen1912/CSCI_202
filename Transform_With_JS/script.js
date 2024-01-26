@@ -1,6 +1,6 @@
-function updateTimeAndColor(offset, timeId, dateId, timeZone) {
+function updateTimeAndColor(sliderValue, offset, timeId, dateId, timeZone) {
     const currentDate = new Date();
-    const utcHour = currentDate.getUTCHours();
+    const utcHour = sliderValue % 24; // Calculate the actual UTC hour based on the slider value
     const currentHour = (utcHour + offset + 24) % 24; // Ensure the result is non-negative
 
     const options = { timeZone, hour12: false };
@@ -30,13 +30,12 @@ function updateTimeAndColor(offset, timeId, dateId, timeZone) {
     }
 }
 
-
 function updateWithSlider() {
     const sliderValue = parseInt(document.getElementById('timeSlider').value, 10);
 
     // Update all UTC time zones dynamically
     for (let i = -12; i <= 12; i++) {
-        updateTimeAndColor(sliderValue + i, `time${i}`, `date${i}`, `Etc/GMT${i >= 0 ? '+' : ''}${i}`);
+        updateTimeAndColor(sliderValue, i, `time${i}`, `date${i}`, `Etc/GMT${i >= 0 ? '+' : ''}${i}`);
     }
 }
 
