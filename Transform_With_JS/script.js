@@ -30,6 +30,7 @@ function updateTimeAndColor(offset, timeId, dateId, timeZone) {
     }
 }
 
+
 function updateWithSlider() {
     const sliderValue = parseInt(document.getElementById('timeSlider').value, 10);
 

@@ -17,7 +17,7 @@
         for (let i = -12; i <= 12; i++) {
             document.write(`
                 <div class="timezone" id="utc${i}">
-                    <h2>UTC${i === 0 ? '+' : (i > 0 ? '-' : '')}${i}</h2>
+                    <h2>UTC${i === 0 ? '-' : (i > 0 ? '+' : '')}${i}</h2>
                     <p id="time${i}"></p>
                     <p id="date${i}"></p>
                 </div>
