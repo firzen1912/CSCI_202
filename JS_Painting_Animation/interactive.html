@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+  <style> body {display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0;} </style>
+  <title>Counter Composition XIII</title>
+</head>
+<body>
+  <script>
+    let angle = 0;
+
+    function setup() {
+    createCanvas(600, 600);
+    }
+
+    function draw() {
+    background(255);
+
+    // Animated version of Counter Composition XIII
+    push();
+    translate(width / 2, height / 2);
+    rotate(radians(angle));
+    fill(150, 0, 0);
+    rect(-250, -250, 500, 500);
+    fill(255);
+    rect(-200, -200, 400, 400);
+    pop();
+
+    angle += 1; // Increase the rotation angle
+    }
+  </script>
+</body>
+</html>
