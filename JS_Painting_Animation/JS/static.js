@@ -40,9 +40,6 @@ function draw() {
 
     //gap filler
     triangle(blackVertices[0].x, blackVertices[0].y,blackVertices[1].x, blackVertices[1].y,blackVertices[4].x, blackVertices[4].y)
-    for (let vertex of blackVertices) {
-        text(vertex.label, vertex.x, vertex.y);
-    }
     pop(); // Restore the previous transformation state
 
 
@@ -57,9 +54,6 @@ function draw() {
     ];
     //yellow triangle 
     triangle(yellowVertices[0].x, yellowVertices[0].y,yellowVertices[1].x, yellowVertices[1].y,yellowVertices[2].x, yellowVertices[2].y)
-    for (let vertex of yellowVertices) {
-        text(vertex.label, vertex.x, vertex.y);
-    }
     pop(); // Restore the previous transformation state
 
 
@@ -81,10 +75,6 @@ function draw() {
     //tan triangle 
     quad(grayVertices[0].x, grayVertices[0].y,grayVertices[1].x, grayVertices[1].y,grayVertices[2].x, grayVertices[2].y,grayVertices[3].x, grayVertices[3].y)
     triangle(grayVertices[4].x, grayVertices[4].y,grayVertices[5].x, grayVertices[5].y,grayVertices[6].x, grayVertices[6].y)
-
-    for (let vertex of grayVertices) {
-        text(vertex.label, vertex.x, vertex.y);
-    }
     pop(); // Restore the previous transformation state
 
 
@@ -105,9 +95,6 @@ function draw() {
     triangle(redVertices[1].x, redVertices[1].y,redVertices[2].x, redVertices[2].y,redVertices[4].x, redVertices[4].y)
 
     //labeling
-    for (let vertex of redVertices) {
-        text(vertex.label, vertex.x, vertex.y);
-    }
     pop(); // Restore the previous transformation state
 
     
@@ -131,10 +118,6 @@ function draw() {
     quad(tanVertices[0].x, tanVertices[0].y,tanVertices[1].x, tanVertices[1].y,tanVertices[2].x, tanVertices[2].y,tanVertices[3].x, tanVertices[3].y)
 
     quad(tanVertices[4].x, tanVertices[4].y,tanVertices[5].x, tanVertices[5].y,tanVertices[6].x, tanVertices[6].y,tanVertices[7].x, tanVertices[7].y)
-
-    for (let vertex of tanVertices) {
-        text(vertex.label, vertex.x, vertex.y);
-    }
     pop(); // Restore the previous transformation state
 
 
@@ -150,10 +133,6 @@ function draw() {
     ];
     //tan triangle 
     triangle(darkGrayVertices[0].x, darkGrayVertices[0].y,darkGrayVertices[1].x, darkGrayVertices[1].y,darkGrayVertices[2].x, darkGrayVertices[2].y)
-
-    for (let vertex of grayVertices) {
-        text(vertex.label, vertex.x, vertex.y);
-    }
     pop(); // Restore the previous transformation state
 }
 
