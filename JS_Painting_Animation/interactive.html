@@ -18,27 +18,31 @@
 
 
   <!-- Reference picture -->
-  <img src="Theo van Doesburg, Counter composition XIII, 1929.jpg" alt="Reference Picture" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 500px; height: auto; opacity: 0.5;">
-
+  <img src="Theo van Doesburg, Counter composition XIII, 1929.jpg" alt="Reference Picture" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 500px; height: auto; opacity: 0;">
+  <button onclick="resetColors()">Reset Colors</button>
 
   <script>
     let colors;
 
     function setup() {
-      // Set the canvas size to 1246 x 1280 pixels
-      createCanvas(600, 600); 
-      
-      //Color Palette 
-      colors = [
-        color(29, 25, 22),         // Black
-        color(204, 159, 66),       // Yellow
-        color(182, 187, 193),      // Gray
-        color(188, 26, 15),        // Red
-        color(221, 212, 203),       // Tan
-        color(114, 110, 111),      // Dark Gray
-      ];
-      noStroke();
-    }
+    // Set the canvas size to 1246 x 1280 pixels
+    createCanvas(600, 600);
+    
+    // Default Color Palette 
+    defaultColors = [
+      color(29, 25, 22),         // Black
+      color(204, 159, 66),       // Yellow
+      color(182, 187, 193),      // Gray
+      color(188, 26, 15),        // Red
+      color(221, 212, 203),      // Tan
+      color(114, 110, 111),      // Dark Gray
+    ];
+
+    // Copy default colors to colors array
+    colors = [...defaultColors];
+
+    noStroke();
+  }
 
     function draw() {
         background(255);
@@ -136,7 +140,7 @@
         rotate(-HALF_PI); // Rotate by -90 degrees (in radians)
         let tanVertices = [
             { x: -255, y: -250, label: 'T1' },
-            { x: -154, y: -154, label: 'T2' },
+            { x: -153, y: -154, label: 'T2' },
             { x: -259, y: -50, label: 'T3' },
             { x: -259, y: -250, label: 'T4' },
 
@@ -156,7 +160,8 @@
         }
         pop(); // Restore the previous transformation state
 
-        
+
+
         //draw gray
         fill(colors[5]);
         push(); // Save the current transformation state
@@ -173,6 +178,18 @@
             text(vertex.label, vertex.x, vertex.y);
         }
         pop(); // Restore the previous transformation state
+    }
+
+    function resetColors() {
+    // Reset colors to default
+    colors = [...defaultColors];
+    }
+
+  function mousePressed() {
+    // Change colors on mouse click
+      for (let i = 0; i < colors.length; i++) {
+        colors[i] = color(random(255), random(255), random(255));
+      }
     }
 
   </script>
