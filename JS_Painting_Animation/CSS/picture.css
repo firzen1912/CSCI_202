@@ -1,0 +1,42 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  .reference-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    height: auto;
+    opacity: 0;
+  }
+
+  .palette-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+  }
+  
+  .color-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .label {
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  button {
+    margin: 5px;
+    padding: 5px 10px;
+    font-size: 16px;
+  }

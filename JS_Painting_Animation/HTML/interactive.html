@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../CSS/picture.css">
+  <title>Counter Composition XIII</title>
+</head>
+<body>
+
+  <!-- Reference picture -->
+  <img src="Theo van Doesburg, Counter composition XIII, 1929.jpg" alt="Reference Picture" class="reference-image">
+  <div class="canvas-container">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <script src="../JS/static.js"></script>
+    <script src="../JS/interactive.js"></script>
+  </div>
+
+  <!-- Color input fields stacked vertically -->
+  <div class="palette-container">
+    <div class="color-section">
+      <input type="color" id="blackColorInput" value="#1D1915">
+    </div>
+
+    <div class="color-section">
+      <input type="color" id="yellowColorInput" value="#CC9F42">
+    </div>
+
+    <div class="color-section">
+      <input type="color" id="grayColorInput" value="#B6BBC1">
+    </div>
+
+    <div class="color-section">
+      <input type="color" id="redColorInput" value="#BC1A0F">
+    </div>
+
+    <div class="color-section">
+      <input type="color" id="tanColorInput" value="#DDD4CB">
+    </div>
+
+    <div class="color-section">
+      <input type="color" id="darkGrayColorInput" value="#72706F">
+    </div>
+  </div>
+  <!-- Button to update colors -->
+  <button onclick="updateColors()">Update Colors</button>
+  <button onclick="resetColors()">Reset Colors</button>
+  <button onclick="randomColor()">Random Colors</button>
+  
+</body>
+</html>
