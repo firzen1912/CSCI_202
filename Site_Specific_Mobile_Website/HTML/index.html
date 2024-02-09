@@ -3,13 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CS Department Location Guide</title>
+  <title>Makerspace Guide</title>
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <!-- Custom CSS -->
   <style>
     body {
       padding-top: 60px; /* Adjust based on the height of your navigation bar */
+      margin-bottom: 0; /* Adjust to remove the gap under the footer */
+    }
+    .list-group-item img {
+      max-width: 100px; /* Adjust based on your image size */
+      max-height: 100px; /* Adjust based on your image size */
+      margin-right: 10px;
+    }
+    footer {
+      background-color: #343a40; /* Color of the navbar */
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+      bottom: 0;
+      width: 100%;
     }
   </style>
 </head>
@@ -18,7 +32,12 @@
   <!-- Navigation Bar -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="#">CS Department Location Guide</a>
+      <a class="navbar-brand" href="#">Makerspace Guide</a>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="https://engineeringdesign.wwu.edu/makerspace" target="_blank">Visit WWU Makerspace Website</a>
+        </li>
+      </ul>
     </div>
   </nav>
 
@@ -26,21 +45,40 @@
   <div class="container">
     <div class="row mt-5">
       <div class="col-lg-12">
-        <h2 class="text-center">Welcome to Our Campus Location Guide</h2>
-        <p class="lead text-center">Select a location below to explore:</p>
+        <h2 class="text-center">Welcome to Our Makerspace</h2>
+        <p class="lead text-center">Explore our creative hub for innovation and collaboration:</p>
       </div>
     </div>
     <div class="row mt-3">
-      <div class="col-lg-6 offset-lg-3">
+      <div class="col-lg-6 offset-lg-3 mb-5">
         <div class="list-group">
-          <a href="#" class="list-group-item list-group-item-action">Stadium Piece (Stairs to Nowhere)</a>
-          <a href="#" class="list-group-item list-group-item-action">Pedestrian Tunnel to Parking Lot</a>
-          <a href="#" class="list-group-item list-group-item-action">Fairhaven College</a>
-          <!-- Add more locations as needed -->
+          <a href="#" class="list-group-item list-group-item-action">
+            <img src="../Images/laser_cutter_icon.jpg" alt="Laser Cutter">
+            Laser Cutter
+          </a>
+          <a href="#" class="list-group-item list-group-item-action">
+            <img src="../Images/sewing_machine_icon.jpg" alt="Sewing Machine">
+            Sewing
+          </a>
+          <a href="#" class="list-group-item list-group-item-action">
+            <img src="../Images/3d_printer_icon.jpg" alt="3D Printer">
+            3D Printer
+          </a>
+          <a href="#" class="list-group-item list-group-item-action">
+            <img src="../Images/vinyl_cutter_icon.jpg" alt="Vinyl Cutter">
+            Vinyl Cutter
+          </a>
         </div>
       </div>
     </div>
   </div>
+
+  <!-- Footer -->
+  <footer id="footer">
+    <div class="container">
+      <p>&copy; 2024 Makerspace Guide</p>
+    </div>
+  </footer>
 
   <!-- Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
