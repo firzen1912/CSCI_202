@@ -1,6 +1,7 @@
 <HTML>
 <HEAD>
 	<TITLE>Eliza (elizabot.js)</TITLE>
+	<link rel="stylesheet" type="text/css" href="style.css">
 	<SCRIPT LANGUAGE="JavaScript" TYPE="text/javascript" SRC="elizabot.js"></SCRIPT>
 	<SCRIPT LANGUAGE="JavaScript" TYPE="text/javascript" SRC="elizadata.js"></SCRIPT>
 
@@ -61,10 +62,13 @@ function elizaStep() {
 
 <BODY TOPMARGIN="0" LEFTMARGIN="0" RIGHTMARGIN="0" BOTTOMMARGIN="0" MARGINHEIGHT="0" MARGINWIDTH="0" STYLE="border:0" onload="window.setTimeout('elizaReset()',100)"><A NAME="top"></A>
 
+<header>
+	<a href="index.html" class="brand">Khang Tran CSCI 202 Eliza Chatbot</a>
+</header>
+
 <CENTER>
-<P>&nbsp;</P>
-<H3>Eliza</H3>
-<TABLE BORDER="0" CELLSPACING="10" CELLPADDING="0">
+<H3>Buddhist Eliza</H3>
+<TABLE BORDER="0" CELLSPACING="10" CELLPADDING="10">
 <FORM NAME="e_form" onsubmit="elizaStep();return false">
 <TR><TD COLSPAN="2"><TEXTAREA NAME="e_display" COLS="60" ROWS="20"></TEXTAREA></TD></TR>
 <TR VALIGN="middle">
@@ -75,4 +79,16 @@ function elizaStep() {
 </TABLE>
 </CENTER>
 </BODY>
+
+<footer>
+    <p>Copyright &copy; 2024 Khang Tran Eliza Chatbot<br></p>
+    <small>
+      <b>Last modified:</b>
+      <script>
+          var date = document.lastModified;
+          document.write(date);
+      </script>
+    </small>
+</footer>
+
 </HTML>
