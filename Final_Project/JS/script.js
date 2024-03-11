@@ -1,75 +1,79 @@
 const vocabulary = {
-    "Xin chào": "Hello",
-    "Cái bút": "The pen",
-    "Điều kiện": "Condition",
-    "Thành phố": "City",
-    "Bàn": "Table",
-    "Sách": "Book",
-    "Máy tính": "Computer",
-    "Quyển sổ": "Notebook",
-    "Nhà hàng": "Restaurant",
-    "Con chó": "Dog",
-    "Con mèo": "Cat",
-    "Trái cây": "Fruit",
-    "Máy ảnh": "Camera",
-    "Học sinh": "Student",
-    "Gia đình": "Family",
-    "Bác sĩ": "Doctor",
-    "Hoa": "Flower",
-    "Trời": "Sky",
-    "Biển": "Sea",
-    "Ngôi nhà": "House",
-    "Trường học": "School",
-    "Bể bơi": "Swimming pool",
-    "Cửa hàng": "Shop",
-    "Sân bay": "Airport",
-    "Bếp": "Kitchen",
-    "Phòng ngủ": "Bedroom",
-    "Phòng tắm": "Bathroom",
-    "Quần áo": "Clothes",
-    "Giày": "Shoes",
-    "Tivi": "TV",
-    "Điện thoại": "Phone",
-    "Xe hơi": "Car",
-    "Xe bus": "Bus",
-    "Đường phố": "Street",
-    "Bình minh": "Sunrise",
-    "Hoàng hôn": "Sunset",
-    "Công viên": "Park",
-    "Dãy núi": "Mountain",
-    "Sông": "River",
-    "Đồng cỏ": "Grassland",
-    "Máy giặt": "Washing machine",
-    "Máy sấy": "Dryer",
-    "Nước": "Water",
-    "Nước mắt": "Tears",
-    "Nắng": "Sunshine",
-    "Mưa": "Rain",
-    "Gió": "Wind",
-    "Tuyết": "Snow",
-    "Mây": "Cloud",
-    // Add more Vietnamese words and their English translations here
+    "Subjects": {
+        "Tôi": "I",
+        "Bạn": "You",
+        "Chúng Ta": "We",
+        "Cô ấy": "She",
+        "Anh ấy": "He",
+        "Nó": "It",
+        // Add more subjects here
+    },
+    "Verbs": {
+        "chào": "greets",
+        "mua": "buys",
+        "bán": "sells",
+        "chạy": "runs",
+        "học": "studies",
+        "dạy": "teaches",
+        "lái": "drives",
+        "nghiên cứu": "researches",
+        "ăn": "eats",
+        // Add more verbs here
+    },
+    "Objects": {
+        "Cái bút": "the pen",
+        "Sách": "the book",
+        "Máy tính": "the computer",
+        "Quyển sổ": "the notebook",
+        "Nhà hàng": "the restaurant",
+        "Bàn ăn": "the dining table",
+        "Máy ảnh": "the camera",
+        "Quần áo": "the clothes",
+        "Giày dép": "the shoes",
+        "Điện thoại": "the phone",
+        // Add more objects here
+    }
+    // Add more categories if necessary
 };
 
+
 function generateExercise() {
-    const vietnameseWords = Object.keys(vocabulary);
-    const randomIndex = Math.floor(Math.random() * vietnameseWords.length);
-    const randomVietnameseWord = vietnameseWords[randomIndex];
-    const englishTranslation = vocabulary[randomVietnameseWord];
+    // Separate vocabulary into subject, verb, and object groups
+    const subjects = Object.keys(vocabulary.Subjects);
+    const verbs = Object.keys(vocabulary.Verbs);
+    const objects = Object.keys(vocabulary.Objects);
+
+    // Randomly select one word from each group
+    const randomSubject = subjects[Math.floor(Math.random() * subjects.length)];
+    const randomVerb = verbs[Math.floor(Math.random() * verbs.length)];
+    const randomObject = objects[Math.floor(Math.random() * objects.length)];
 
     const exerciseContainer = document.getElementById('exercise');
     exerciseContainer.innerHTML = `
-        <p><strong>Translate the Vietnamese word:</strong></p>
-        <p>${randomVietnameseWord}</p>
-        <input type="text" id="userTranslation" placeholder="Enter English translation">
-        <button onclick="checkTranslation('${englishTranslation}')">Check</button>
+        <div class="sentence">
+            <div class="vietnamese">${randomSubject} ${randomVerb} ${randomObject}</div>
+            <div class="english">
+                <input type="text" id="subjectTranslation" placeholder="Enter English subject">
+                <input type="text" id="verbTranslation" placeholder="Enter English verb">
+                <input type="text" id="objectTranslation" placeholder="Enter English object">
+            </div>
+        </div>
+        <button onclick="checkTranslation()">Check</button>
         <p id="result"></p>
     `;
 }
 
-function checkTranslation(correctTranslation) {
-    const userTranslation = document.getElementById('userTranslation').value;
+function checkTranslation() {
+    const subject = document.getElementById('subject').value;
+    const verb = document.getElementById('verb').value;
+    const object = document.getElementById('object').value;
+    const subjectTranslation = document.getElementById('subjectTranslation').value;
+    const verbTranslation = document.getElementById('verbTranslation').value;
+    const objectTranslation = document.getElementById('objectTranslation').value;
+    const userTranslation = `${subjectTranslation} ${verbTranslation} ${objectTranslation}`;
+    const correctTranslation = vocabulary.Subjects[subject] + ' ' + vocabulary.Verbs[verb] + ' ' + vocabulary.Objects[object];
     const resultContainer = document.getElementById('result');
+
     if (userTranslation.trim().toLowerCase() === correctTranslation.toLowerCase()) {
         resultContainer.textContent = "Correct!";
     } else {

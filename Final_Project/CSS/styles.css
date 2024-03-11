@@ -122,6 +122,27 @@
   ul li a:hover {
     color: #333;
   }
+
+  /* Exercise style*/
+  .sentence {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sentence .vietnamese {
+      display: inline-block;
+      margin-bottom: 10px;
+  }
+
+  .sentence .english {
+      display: flex;
+      flex-direction: row;
+  }
+
+  .sentence .english input {
+      margin-right: 10px;
+  }
+
   
   /* video style */
   .video-container {
