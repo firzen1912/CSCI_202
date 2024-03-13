@@ -139,4 +139,3 @@ function nextExercise() {
 
 // Generate initial exercise
 generateExercise();
-
