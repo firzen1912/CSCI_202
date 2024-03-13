@@ -1,9 +1,9 @@
 const vocabulary = {
     "Phrases": [
-        { vietnamese: "Xin chào", english: "Hello There" },
-        { vietnamese: "Tên tôi là John", english: "My name is John" },
-        { vietnamese: "Tôi đến từ nước Mỹ", english: "I am from the USA" },
-        { vietnamese: "Tôi đang du lịch tại Việt Nam", english: "I am traveling in Vietnam" },
+        { vietnamese: "xin chào", english: "Hello there" },
+        { vietnamese: "tên tôi là John", english: "My name is John" },
+        { vietnamese: "tôi đến từ nước Mỹ", english: "I am from the USA" },
+        { vietnamese: "tôi đang du lịch tại Việt Nam", english: "I am traveling in Vietnam" },
         // Add more phrases here as objects
     ]
     // Add more categories if necessary
@@ -43,7 +43,7 @@ function generateExercise() {
             </div>
             <div class="scramble_word_audio">
                 ${shuffledIndices.map(index => `
-                    <button onclick="speak('${words[index]}', 'vi', ${index})">${words[index]}</button>
+                    <button id="wordButton_${index}" onclick="speak('${words[index]}', 'vi', ${index})">${words[index]}</button>
                 `).join('')}
             </div>
         </div>
@@ -66,28 +66,25 @@ function generateExercise() {
 function speak(word, lang, index, type) {
     if (lang === 'vi') {
         // For Vietnamese language
-        const button = event.target; // Get the button element that was clicked
-        button.disabled = true; // Disable the button
         if (type === 'full') {
             // If index is provided, indicating full phrase audio
             const audio = new Audio(`../Audio/full/Phrase_${currentPhraseIndex}.mp3`);
             audio.play();
         } else {
             // If index is not provided, play the individual word audio
+            const button = document.getElementById(`wordButton_${index}`); // Get the button element that was clicked
+            button.disabled = true; // Disable the button
             const audio = new Audio(`../Audio/individual/Phrase_${currentPhraseIndex}_${index}.mp3`);
             audio.play();
             // Store the index of clicked word
             clickedWordIndices.push(index);
-            // Display the word in the scramble word section
-            const scrambleWordSection = document.querySelector('.scramble_word_audio');
-            scrambleWordSection.innerHTML += `<span>${word} </span>`;
-        }
-        // Check if all buttons have been pressed
-        if (clickedWordIndices.length === originalWordIndices.length) {
-            // If all buttons are pressed, check the order and display the message
-            checkOrder();
-            // Set needRefresh to true
-            needRefresh = true;
+            // Check if all buttons have been pressed
+            if (clickedWordIndices.length === originalWordIndices.length) {
+                // If all buttons are pressed, check the order and display the message
+                checkOrder();
+                // Set needRefresh to true
+                needRefresh = true;
+            }
         }
     } else {
         // For other languages, use text-to-speech engine
@@ -117,7 +114,6 @@ function checkOrder() {
     }
 }
 
-
 function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -136,7 +132,6 @@ function refreshExercise() {
     generateExercise(); // Generate a new exercise
 }
 
-
 function nextExercise() {
     currentPhraseIndex = (currentPhraseIndex + 1) % totalPhrases;
     generateExercise();
@@ -144,3 +139,4 @@ function nextExercise() {
 
 // Generate initial exercise
 generateExercise();
+
