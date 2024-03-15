@@ -20,12 +20,18 @@ function loadLanguage() {
 function updateContent(selectedLanguage) {
     var englishContent = document.getElementById("englishContent");
     var vietnameseContent = document.getElementById("vietnameseContent");
+    var englishInstruction = document.getElementById("englishInstruction");
+    var vietnameseInstruction = document.getElementById("vietnameseInstruction");
     if (selectedLanguage === "en") {
         englishContent.style.display = "block";
         vietnameseContent.style.display = "none";
+        englishInstruction.style.display = "block";
+        vietnameseInstruction.style.display = "none";
     } else {
         englishContent.style.display = "none";
         vietnameseContent.style.display = "block";
+        englishInstruction.style.display = "none";
+        vietnameseInstruction.style.display = "block";
     }
 }
 
