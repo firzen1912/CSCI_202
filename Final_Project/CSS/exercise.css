@@ -1,0 +1,56 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.exercise {
+    text-align: center;
+    margin: 0 auto;
+}
+
+.full_english_text {
+    font-size: 30px;
+    margin-bottom: 5px; /* Add some space below full English text */
+}
+
+.full_vietnamese_text {
+    font-size: 30px;
+    margin-bottom: 5px; /* Add some space below full English text */
+}
+
+.scramble_word_audio button,
+.full_vietnamese_audio button,
+.full_english_audio button {
+    font-size: 1.2em; /* Increase button font size */
+    padding: 10px 20px; /* Adjust padding for larger buttons */
+    margin: 5px; /* Add some margin between buttons */
+}
+
+.progress-bar-container {
+    margin-top: 20px; /* Add some space above progress bar */
+}
+
+.progress-bar {
+    height: 10px; /* Adjust height of progress bar */
+    background-color: #4CAF50; /* Green */
+}
+
+.progress-bar span {
+    padding-left: 10px; /* Add some space between progress bar and text */
+}
+
+.button-container {
+    text-align: center;
+    margin-top: 20px; /* Add some space above the buttons */
+}
+
+.button-container button {
+    font-size: 1.2em; /* Increase button size */
+    padding: 10px 20px; /* Adjust padding for larger buttons */
+    margin: 10px; /* Add some margin between buttons */
+}
+
+#message {
+    text-align: center;
+    font-size: 1.2em; /* Increase message font size */
+    margin-top: 20px; /* Add some space above message */
+}

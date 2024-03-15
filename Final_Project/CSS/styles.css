@@ -1,167 +1,181 @@
 /* Basic reset styles */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  /* Body styles */
-  body {
-    font-family: Arial, sans-serif;
-    font-size: 16px;
-    line-height: 1.5;
-  }
-  
-  /* Header styles */
-  header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
-  }
-  
-  header .brand {
-    font-size: 24px;
-    color: #fff;
-    text-decoration: none;
-    margin-right: auto;
-  }
-  
-  header nav ul {
-    list-style: none;
-    display: flex;
-    margin: 0;
-    padding: 0;
-  }
-  
-  header nav ul li {
-    margin-left: 30px;
-  }
-  
-  header nav ul li:first-child {
-    margin-left: 0;
-  }
-  
-  header nav ul li:last-child {
-    margin-right: 30px;
-  }
-  
-  header nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    padding: 10px;
-    position: relative;
-    transition: color 0.3s ease, border-bottom-color 0.3s ease;
-  }
-  
-  header nav ul li a:before {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background-color: transparent;
-    transition: background-color 0.3s ease;
-  }
-  
-  header nav ul li a:hover {
-    color: #fff;
-    border-bottom-color: #fff;
-  }
-  
-  header nav ul li a:hover:before {
-    background-color: #fff;
-  }
-  
-  a{
-    color: #4169E1;
-  }
-  
-  /* Main styles */
-  main {
-    margin-left: 220px; /* Add some spacing between sidebar and main */
-  }
-  
-  section {
-    margin-bottom: 20px;
-  }
-  
-  section ul li {
-    margin-top: 5px;
-    margin-left: 25px;
-  }
-  
-  h1 {
-    font-size: 36px;
-    margin-bottom: 10px;
-  }
-  
-  h2 {
-    font-size: 24px;
-    margin-bottom: 10px;
-  } 
-  
-  h3 {
-    margin-bottom: 10px;
-  }
-  
-  
-  p {
-    margin-bottom: 10px;
-  }
-  
-  ul li a {
-    color: #4169E1;
-    text-decoration: none;
-    transition: all 0.3s ease;
-  }
-  
-  ul li a:hover {
-    color: #333;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  /* Exercise style*/
-  .sentence {
-    display: flex;
-    flex-direction: column;
-  }
+/* Container for main content */
+.container {
+  margin: 10px;
+}
+.overview-section{
+  margin: 0px;
+  padding: 0px;
+}
 
-  .sentence .vietnamese {
-      display: inline-block;
-      margin-bottom: 10px;
-  }
+/* Body styles */
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
 
-  .sentence .english {
-      display: flex;
-      flex-direction: row;
-  }
+/* Header styles */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+}
 
-  .sentence .english input {
-      margin-right: 10px;
-  }
+header .brand {
+  font-size: 24px;
+  color: #fff;
+  text-decoration: none;
+  margin-right: auto;
+}
 
-  
-  /* video style */
-  .video-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 425px;
-    margin-bottom: 20px;
-  }
-  
-  video{
-    width: 800px;
-  }
-  
-  /* Footer styles */
-  footer {
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
-  }
+header nav ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+header nav ul li {
+  margin-left: 30px;
+}
+
+header nav ul li:first-child {
+  margin-left: 0;
+}
+
+header nav ul li:last-child {
+  margin-right: 30px;
+}
+
+header nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px;
+  position: relative;
+  transition: color 0.3s ease, border-bottom-color 0.3s ease;
+}
+
+header nav ul li a:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: transparent;
+  transition: background-color 0.3s ease;
+}
+
+header nav ul li a:hover {
+  color: #fff;
+  border-bottom-color: #fff;
+}
+
+header nav ul li a:hover:before {
+  background-color: #fff;
+}
+
+a {
+  color: #4169E1;
+}
+
+/* Additional styles for the button */
+#startExerciseButton {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 20px 40px;
+  text-align: center;
+  text-decoration: none;
+  display: block; /* Change display to block */
+  margin: 20px auto; /* Set margin to center horizontally */
+  font-size: 24px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+#startExerciseButton:hover {
+  background-color: #45a049;
+}
+
+
+/* Main styles */
+main {
+  margin-left: 220px; /* Add some spacing between sidebar and main */
+}
+
+section {
+  margin-bottom: 20px;
+}
+
+section ul li {
+  margin-top: 5px;
+  margin-left: 25px;
+}
+
+h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+} 
+
+h3 {
+  margin-bottom: 10px;
+}
+
+
+p {
+  margin-bottom: 10px;
+}
+
+ul li a {
+  color: #4169E1;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+ul li a:hover {
+  color: #333;
+}
+
+/* Exercise style*/
+.sentence {
+  display: flex;
+  flex-direction: column;
+}
+
+.sentence .vietnamese {
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.sentence .english {
+  display: flex;
+  flex-direction: row;
+}
+
+.sentence .english input {
+  margin-right: 10px;
+}
+
+/* Footer styles */
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}

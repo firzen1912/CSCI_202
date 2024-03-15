@@ -1,9 +1,9 @@
 const vocabulary = {
     "Phrases": [
-        { vietnamese: "xin chào", english: "Hello there" },
-        { vietnamese: "tên tôi là John", english: "My name is John" },
-        { vietnamese: "tôi đến từ nước Mỹ", english: "I am from the USA" },
-        { vietnamese: "tôi đang du lịch tại Việt Nam", english: "I am traveling in Vietnam" },
+        { vietnamese: "Xin chào", english: "Hello there" },
+        { vietnamese: "Tên tôi là John", english: "My name is John" },
+        { vietnamese: "Tôi đến từ nước Mỹ", english: "I am from the USA" },
+        { vietnamese: "Tôi đang du lịch tại Việt Nam", english: "I am traveling in Vietnam" },
         // Add more phrases here as objects
     ]
     // Add more categories if necessary

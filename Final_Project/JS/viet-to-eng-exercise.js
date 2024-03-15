@@ -1,9 +1,9 @@
 const vocabulary = {
     "Phrases": [
-        { vietnamese: "xin chào", english: "Hello there" },
-        { vietnamese: "tên tôi là John", english: "My name is John" },
-        { vietnamese: "tôi đến từ nước Mỹ", english: "I am from the USA" },
-        { vietnamese: "tôi đang du lịch tại Việt Nam", english: "I am traveling in Vietnam" },
+        { vietnamese: "Xin chào", english: "Hello there" },
+        { vietnamese: "Tên tôi là Linh", english: "My name is Linh" },
+        { vietnamese: "Tôi đến từ Việt Nam", english: "I am from Vietnam" },
+        { vietnamese: "Tôi đang du lịch tại Mỹ", english: "I am traveling in The USA" },
         // Add more phrases here as objects
     ]
     // Add more categories if necessary
@@ -20,7 +20,7 @@ let needRefresh = false; // Flag to track if the exercise needs to be refreshed
 function generateExercise() {
     // Select the current phrase based on the current index
     const currentPhrase = vocabulary.Phrases[currentPhraseIndex];
-    const words = currentPhrase.vietnamese.split(" ");
+    const words = currentPhrase.english.split(" ");
     const wordIndices = Array.from({ length: words.length }, (_, i) => i); // Array of indices
 
     // Store original order of word indices
@@ -35,15 +35,15 @@ function generateExercise() {
     const exerciseContainer = document.getElementById('exercise');
     exerciseContainer.innerHTML = `
         <div class="exercise">
-            <div class="full_english_text">
-                ${currentPhrase.english}
+            <div class="full_vietnamese_text">
+                ${currentPhrase.vietnamese}
             </div>
-            <div class="full_vietnamese_audio">
-                <button onclick="speak('${currentPhrase.vietnamese}', 'vi', ${currentPhraseIndex}, 'full')">Full Vietnamese Audio</button>
+            <div class="full_english_audio">
+                <button onclick="speak('${currentPhrase.english}', 'en', ${currentPhraseIndex}, 'full')">Full English Audio</button>
             </div>
             <div class="scramble_word_audio">
                 ${shuffledIndices.map(index => `
-                    <button id="wordButton_${index}" onclick="speak('${words[index]}', 'vi', ${index})">${words[index]}</button>
+                    <button id="wordButton_${index}" onclick="speak('${words[index]}', 'en', ${index})">${words[index]}</button>
                 `).join('')}
             </div>
         </div>
@@ -64,18 +64,20 @@ function generateExercise() {
 }
 
 function speak(word, lang, index, type) {
-    if (lang === 'vi') {
-        // For Vietnamese language
+    if (lang === 'en') {
+        // For English language
         if (type === 'full') {
             // If index is provided, indicating full phrase audio
-            const audio = new Audio(`../Audio/full/Phrase_${currentPhraseIndex}.mp3`);
-            audio.play();
+            const utterance = new SpeechSynthesisUtterance(word);
+            utterance.lang = 'en-US'; // Set language to English
+            window.speechSynthesis.speak(utterance);
         } else {
             // If index is not provided, play the individual word audio
             const button = document.getElementById(`wordButton_${index}`); // Get the button element that was clicked
             button.disabled = true; // Disable the button
-            const audio = new Audio(`../Audio/individual/Phrase_${currentPhraseIndex}_${index}.mp3`);
-            audio.play();
+            const utterance = new SpeechSynthesisUtterance(word);
+            utterance.lang = 'en-US'; // Set language to English
+            window.speechSynthesis.speak(utterance);
             // Store the index of clicked word
             clickedWordIndices.push(index);
             // Check if all buttons have been pressed
