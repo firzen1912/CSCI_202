@@ -3,30 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vietnamese to English Exercise</title>
+    <title>Bài Tập Tiếng Việt sang Tiếng Anh</title>
     <link rel="stylesheet" type="text/css" href="../CSS/styles.css">
     <link rel="stylesheet" type="text/css" href="../CSS/exercise.css">
 </head>
 <body>
     <header>
         <a href="../HTML/index.html" class="brand">Final Project</a>
+         <!-- Language Switcher -->
+        <select id="languageSelector" onchange="switchLanguage()">
+          <option value="en">English</option>
+          <option value="vi">Tiếng Việt</option>
+        </select>
     </header>   
-    <div class="container">
-      <h1>English to Vietnamese Exercise</h1>
+    <h1>Vietnamese to English Exercise</h1>
       <div id="exercise"></div>
+
+      <!-- English Content -->
+      <div id="englishContent">
+        <div class="container">
+          <h2>How to Interact with the Exercise:</h2>
+          <ol>
+              <li><strong>Understanding the Exercise Interface:</strong> When the exercise loads, you will see a Vietnamese phrase displayed along with a set of buttons containing shuffled English words. Your task is to rearrange these words to form the correct English sentence corresponding to the given Vietnamese phrase.</li>
+              <li><strong>Listening to Pronunciation:</strong> Click on the English word buttons to listen to their pronunciation. This can help you identify the correct order of words.</li>
+              <li><strong>Reordering Words:</strong> Arrange the English word buttons in the order you believe is correct to form the complete sentence. Once you click on a word button, it becomes disabled to prevent you from selecting it again.</li>
+              <li><strong>Checking Your Answer:</strong> After arranging all the words, the script will automatically check if your arrangement matches the original order. If correct, it will display "Correct Order!" Otherwise, it will display "Incorrect Order!"</li>
+              <li><strong>Navigating Through Exercises:</strong> You can navigate through different exercises using the "Previous Exercise" and "Next Exercise" buttons provided. The progress bar indicates your progress through the exercises.</li>
+              <li><strong>Refreshing the Exercise:</strong> If you wish to reset the exercise, click the "Refresh Exercise" button. This clears your previous selections and shuffles the word buttons again.</li>
+              <li><strong>Listening to Full Phrase Audio:</strong> Click the "Full English Audio" button to listen to the full audio of the English phrase. This aids in reinforcing your understanding of pronunciation and intonation.</li>
+              <li><strong>Accessibility:</strong> The interface is designed to be accessible, allowing interaction via mouse clicks or touch inputs.</li>
+          </ol>
+        </div>  
+    </div>
+
+    <!-- Vietnamese Content -->
+    <div id="vietnameseContent"style="display: none;">
+      <div class="container">
+        <div id="instructions">
+            <h2>Cách Tương Tác với Bài Tập:</h2>
+            <ol>
+                <li><strong>Hiểu Giao Diện Bài Tập:</strong> Khi bài tập được tải, bạn sẽ thấy một cụm từ tiếng Việt được hiển thị cùng với một loạt các nút chứa các từ tiếng Anh đã được xáo trộn. Nhiệm vụ của bạn là sắp xếp các từ này để tạo thành câu tiếng Anh chính xác tương ứng với cụm từ tiếng Việt đã cho.</li>
+                <li><strong>Nghe Phát Âm:</strong> Click vào các nút từ tiếng Anh để nghe phát âm của chúng. Điều này có thể giúp bạn nhận diện được thứ tự chính xác của các từ.</li>
+                <li><strong>Sắp Xếp Các Từ:</strong> Sắp xếp các nút từ tiếng Anh theo thứ tự bạn cho là chính xác để tạo thành câu tiếng Anh hoàn chỉnh. Mỗi khi bạn click vào một nút từ, nó sẽ trở thành không thể chọn lại để ngăn bạn chọn nó một lần nữa.</li>
+                <li><strong>Kiểm Tra Câu Trả Lời:</strong> Sau khi sắp xếp tất cả các từ, kịch bản sẽ tự động kiểm tra xem sắp xếp của bạn có khớp với thứ tự ban đầu không. Nếu đúng, nó sẽ hiển thị "Thứ Tự Chính Xác!" Nếu không, nó sẽ hiển thị "Thứ Tự Không Chính Xác!"</li>
+                <li><strong>Chuyển Tiếp qua Các Bài Tập:</strong> Bạn có thể chuyển tiếp qua các bài tập khác bằng cách sử dụng các nút "Bài Tập Trước" và "Bài Tập Tiếp Theo" được cung cấp. Thanh tiến trình chỉ ra tiến độ của bạn qua các bài tập.</li>
+                <li><strong>Làm Mới Bài Tập:</strong> Nếu bạn muốn làm mới bài tập, click vào nút "Làm Mới Bài Tập". Điều này sẽ xóa các lựa chọn trước đó của bạn và xáo trộn lại các nút từ.</li>
+                <li><strong>Nghe Âm Thanh Cụm Từ Đầy Đủ:</strong> Click vào nút "Âm Thanh Tiếng Anh Đầy Đủ" để nghe âm thanh đầy đủ của cụm từ tiếng Anh. Điều này giúp củng cố hiểu biết của bạn về cách phát âm và ngữ điệu.</li>
+                <li><strong>Tính Khả Dụng:</strong> Giao diện được thiết kế để có thể tương tác, cho phép bạn tương tác bằng cách click chuột hoặc chạm vào màn hình.</li>
+            </ol>
+        </div>
     </div>
 
     <script src="../JS/viet-to-eng-exercise.js"></script>
+    <script src="../JS/switch-lang.js"></script>
+
+    <footer>
+        <p>Bản quyền &copy; 2023 Khang Tran Professional Blog<br></p>
+        <small>
+            <b>Chỉnh sửa lần cuối:</b>
+            <script>
+                var date = document.lastModified;
+                document.write(date);
+            </script>
+        </small>
+    </footer>
 </body>
 
-<footer>
-  <p>Copyright &copy; 2023 Khang Tran Professional Blog<br></p>
-  <small>
-    <b>Last modified:</b>
-    <script>
-        var date = document.lastModified;
-        document.write(date);
-    </script>
-  </small>
-</footer>
 </html>

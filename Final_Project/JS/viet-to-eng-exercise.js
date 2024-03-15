@@ -39,7 +39,7 @@ function generateExercise() {
                 ${currentPhrase.vietnamese}
             </div>
             <div class="full_english_audio">
-                <button onclick="speak('${currentPhrase.english}', 'en', ${currentPhraseIndex}, 'full')">Full English Audio</button>
+                <button onclick="speak('${currentPhrase.english}', 'en', ${currentPhraseIndex}, 'full')">Âm Thanh Tiếng Anh Đầy Đủ</button>
             </div>
             <div class="scramble_word_audio">
                 ${shuffledIndices.map(index => `
@@ -53,15 +53,16 @@ function generateExercise() {
             <span>${currentPhraseIndex + 1} / ${totalPhrases}</span>
         </div>
         <div class="button-container">
-            <button id="prevButton" onclick="prevExercise()">Previous Exercise</button>
-            <button onclick="refreshExercise()">Refresh Exercise</button>
-            <button id="nextButton" onclick="nextExercise()">Next Exercise</button>
+            <button id="prevButton" onclick="prevExercise()">Bài Tập Trước</button>
+            <button onclick="refreshExercise()">Làm Mới</button>
+            <button id="nextButton" onclick="nextExercise()">Bài Tập Tiếp</button>
         </div>
     `;
 
     // Set needRefresh to false when generating new exercise
     needRefresh = false;
 }
+
 
 function speak(word, lang, index, type) {
     if (lang === 'en') {
@@ -110,11 +111,12 @@ function checkOrder() {
     const isCorrectOrder = JSON.stringify(clickedWordIndices) === JSON.stringify(originalWordIndices);
     const messageElement = document.getElementById('message');
     if (isCorrectOrder) {
-        messageElement.textContent = "Correct Order!";
+        messageElement.textContent = "Thứ tự đúng!";
     } else {
-        messageElement.textContent = "Incorrect Order!";
+        messageElement.textContent = "Thứ tự không đúng!";
     }
 }
+
 
 function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {

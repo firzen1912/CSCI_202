@@ -10,23 +10,62 @@
 <body>
     <header>
         <a href="../HTML/index.html" class="brand">Final Project</a>
+         <!-- Language Switcher -->
+        <select id="languageSelector" onchange="switchLanguage()">
+          <option value="en">English</option>
+          <option value="vi">Tiếng Việt</option>
+        </select>
     </header>   
-    <div class="container">
       <h1>English to Vietnamese Exercise</h1>
       <div id="exercise"></div>
-    </div>
+
+      <!-- English Content -->
+      <div id="englishContent">
+        <div class="container">
+          <h2>How to Interact with the Exercise:</h2>
+          <ol>
+              <li><strong>Understanding the Exercise Interface:</strong> When the exercise loads, you will see an English phrase displayed along with a set of buttons containing shuffled Vietnamese words. Your task is to rearrange these words to form the correct Vietnamese translation of the given English phrase.</li>
+              <li><strong>Listening to Pronunciation:</strong> Click on individual Vietnamese word buttons to listen to their pronunciation. This can help you identify the correct order of words.</li>
+              <li><strong>Reordering Words:</strong> Arrange the Vietnamese word buttons in the order you believe is correct to form the complete phrase. Once you click on a word button, it becomes disabled to prevent you from selecting it again.</li>
+              <li><strong>Checking Your Answer:</strong> After arranging all the words, the script automatically checks if your arrangement matches the original order. If correct, it displays "Correct Order!" Otherwise, it displays "Incorrect Order!"</li>
+              <li><strong>Navigating Through Exercises:</strong> You can navigate through different exercises using the "Previous Exercise" and "Next Exercise" buttons provided. The progress bar indicates your progress through the exercises.</li>
+              <li><strong>Refreshing the Exercise:</strong> If you wish to reset the exercise, click the "Refresh Exercise" button. This clears your previous selections and shuffles the word buttons again.</li>
+              <li><strong>Listening to Full Phrase Audio:</strong> Click the "Full Vietnamese Audio" button to listen to the full audio of the Vietnamese phrase. This aids in reinforcing your understanding of pronunciation and intonation.</li>
+              <li><strong>Accessibility:</strong> The interface is designed to be accessible, allowing interaction via mouse clicks or touch inputs.</li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- Vietnamese Content -->
+      <div id="vietnameseContent" style="display: none;">
+          <div class="container">
+            <h2>Cách Tương Tác với Bài Tập:</h2>
+            <ol>
+                <li><strong>Hiểu Giao Diện Bài Tập:</strong> Khi bài tập tải, bạn sẽ thấy một cụm từ tiếng Anh được hiển thị cùng với một loạt các nút chứa các từ tiếng Việt được xáo trộn. Nhiệm vụ của bạn là sắp xếp lại những từ này để tạo thành bản dịch tiếng Việt chính xác của cụm từ tiếng Anh đã cho.</li>
+                <li><strong>Nghe Phát Âm:</strong> Nhấp vào các nút từ tiếng Việt để nghe phát âm của chúng. Điều này có thể giúp bạn xác định thứ tự từ đúng.</li>
+                <li><strong>Sắp Xếp Lại Từ:</strong> Sắp xếp các nút từ tiếng Việt theo thứ tự bạn cho là đúng để tạo thành cụm từ hoàn chỉnh. Khi bạn nhấp vào một nút từ, nó sẽ trở thành không hoạt động để ngăn bạn lựa chọn lại nó.</li>
+                <li><strong>Kiểm Tra Câu Trả Lời:</strong> Sau khi sắp xếp tất cả các từ, mã script sẽ tự động kiểm tra xem sắp xếp của bạn có khớp với thứ tự ban đầu hay không. Nếu đúng, nó sẽ hiển thị "Thứ Tự Chính Xác!" Ngược lại, nó sẽ hiển thị "Thứ Tự Không Chính Xác!"</li>
+                <li><strong>Điều Hướng Qua Các Bài Tập:</strong> Bạn có thể điều hướng qua các bài tập khác bằng cách sử dụng các nút "Bài Tập Trước" và "Bài Tập Tiếp Theo" được cung cấp. Thanh tiến trình chỉ ra tiến độ của bạn qua các bài tập.</li>
+                <li><strong>Làm Mới Bài Tập:</strong> Nếu bạn muốn làm mới bài tập, nhấp vào nút "Làm Mới Bài Tập". Điều này sẽ xóa các lựa chọn trước đó của bạn và xáo trộn lại các nút từ.</li>
+                <li><strong>Nghe Toàn Bộ Phát Âm Cụm Từ:</strong> Nhấp vào nút "Toàn Bộ Phát Âm Tiếng Việt" để nghe toàn bộ âm thanh của cụm từ tiếng Việt. Điều này giúp củng cố hiểu biết của bạn về phát âm và ngữ điệu.</li>
+                <li><strong>Tiện Ích:</strong> Giao diện được thiết kế để có thể tiếp cận, cho phép tương tác thông qua nhấp chuột hoặc chạm.</li>
+            </ol>
+          </div>   
+      </div>
 
     <script src="../JS/eng-to-viet-exercise.js"></script>
-</body>
+    <script src="../JS/switch-lang.js"></script>
+  
 
-<footer>
-  <p>Copyright &copy; 2023 Khang Tran Professional Blog<br></p>
-  <small>
-    <b>Last modified:</b>
-    <script>
-        var date = document.lastModified;
-        document.write(date);
-    </script>
-  </small>
-</footer>
+  <footer>
+    <p>Copyright &copy; 2023 Khang Tran Professional Blog<br></p>
+    <small>
+      <b>Last modified:</b>
+      <script>
+          var date = document.lastModified;
+          document.write(date);
+      </script>
+    </small>
+  </footer>
+</body>
 </html>
